@@ -10,8 +10,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import java.sql.Date;
-
 // Annotations
 @Entity
 @Data
@@ -20,7 +18,7 @@ import java.sql.Date;
 @Builder
 
 
-public class HouseOwener {
+public class HouseOwner {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userId;

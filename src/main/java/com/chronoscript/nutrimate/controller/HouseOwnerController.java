@@ -1,6 +1,6 @@
 package com.chronoscript.nutrimate.controller;
 
-import com.chronoscript.nutrimate.entity.HouseOwener;
+import com.chronoscript.nutrimate.entity.HouseOwner;
 import com.chronoscript.nutrimate.service.HouseOwnerService;
 import java.util.List;
 import java.util.Optional;
@@ -20,43 +20,43 @@ public class HouseOwnerController {
 
     // Save operation
     @PostMapping("/HouseOwner/Save")
-    public HouseOwener saveHouseOwner(
-            @Valid @RequestBody HouseOwener houseOwener)
+    public HouseOwner saveHouseOwner(
+            @Valid @RequestBody HouseOwner houseOwener)
     {
         return houseOwnerService.saveHouseOwner(houseOwener);
     }
 
     // Read operation
     @GetMapping("/HouseOwner/Get")
-    public List<HouseOwener> fetchHouseOwenerList()
+    public List<HouseOwner> fetchHouseOwnerList()
     {
-        return houseOwnerService.fetchHouseOwenerList();
+        return houseOwnerService.fetchHouseOwnerList();
     }
 
     // Read by id operation
     @GetMapping("/HouseOwner/GetById/{id}")
-    public Optional<HouseOwener> fetchHouseOwenerById(@PathVariable("id") Long HouseOwenerId)
+    public Optional<HouseOwner> fetchHouseOwnerById(@PathVariable("id") Long HouseOwenerId)
     {
-        return houseOwnerService.fetchHouseOwenerById(HouseOwenerId);
+        return houseOwnerService.fetchHouseOwnerById(HouseOwenerId);
     }
 
     // Update operation
     @PutMapping("/HouseOwner/{id}")
-    public HouseOwener
-    updateHouseOwener(@RequestBody HouseOwener houseOwener,
-                   @PathVariable("id") Long HouseOwenerId)
+    public HouseOwner
+    updateHouseOwner(@RequestBody HouseOwner houseOwener,
+                   @PathVariable("id") Long HouseOwnerId)
     {
-        return houseOwnerService.updateHouseOwener(
-                houseOwener, HouseOwenerId);
+        return houseOwnerService.updateHouseOwner(
+                houseOwener, HouseOwnerId);
     }
 
     // Delete operation
     @DeleteMapping("/HouseOwner/{id}")
-    public String deleteHouseOwenerById(@PathVariable("id")
-                                     Long HouseOwenerId)
+    public String deleteHouseOwnerById(@PathVariable("id")
+                                     Long HouseOwnerId)
     {
-        houseOwnerService.deleteHouseOwenerById(
-                HouseOwenerId);
+        houseOwnerService.deleteHouseOwnerById(
+                HouseOwnerId);
         return "Deleted Successfully";
     }
 }

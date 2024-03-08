@@ -1,6 +1,6 @@
 package com.chronoscript.nutrimate.service;
 
-import com.chronoscript.nutrimate.entity.HouseOwener;
+import com.chronoscript.nutrimate.entity.HouseOwner;
 import com.chronoscript.nutrimate.repository.HouseOwnerRepository;
 // Importing required classes
 import java.util.List;
@@ -20,103 +20,103 @@ public class HouseOwnerServiceImpl
 
     // Save operation
     @Override
-    public HouseOwener saveHouseOwner(HouseOwener houseOwener)
+    public HouseOwner saveHouseOwner(HouseOwner houseOwner)
     {
-        return houseOwnerRepository.save(houseOwener);
+        return houseOwnerRepository.save(houseOwner);
     }
 
     // Read operation
     @Override
-    public List<HouseOwener> fetchHouseOwenerList()
+    public List<HouseOwner> fetchHouseOwnerList()
     {
-        return (List<HouseOwener>)
+        return (List<HouseOwner>)
                 houseOwnerRepository.findAll();
     }
 
     // Read by id operation
-    @Override public Optional<HouseOwener> fetchHouseOwenerById(Long houseOwenerId)
+    @Override public Optional<HouseOwner> fetchHouseOwnerById(Long houseOwnerId)
     {
-        return houseOwnerRepository.findById(houseOwenerId);
+        return houseOwnerRepository.findById(houseOwnerId);
     }
 
     // Update operation
     @Override
-    public HouseOwener
-    updateHouseOwener(HouseOwener houseOwener,
-                      Long houseOwenerId)
+    public HouseOwner
+    updateHouseOwner(HouseOwner houseOwner,
+                      Long houseOwnerId)
     {
-        HouseOwener depDB
-                = houseOwnerRepository.findById(houseOwenerId)
+        HouseOwner depDB
+                = houseOwnerRepository.findById(houseOwnerId)
                 .get();
 
-        if (Objects.nonNull(houseOwener.getFirstName())
+        if (Objects.nonNull(houseOwner.getFirstName())
                 && !"".equalsIgnoreCase(
-                houseOwener.getFirstName())) {
+                houseOwner.getFirstName())) {
             depDB.setFirstName(
-                    houseOwener.getFirstName());
+                    houseOwner.getFirstName());
         }
 
-        if (Objects.nonNull(houseOwener.getLastName())
+        if (Objects.nonNull(houseOwner.getLastName())
                 && !"".equalsIgnoreCase(
-                houseOwener.getLastName())) {
+                houseOwner.getLastName())) {
             depDB.setLastName(
-                    houseOwener.getLastName());
+                    houseOwner.getLastName());
         }
 
-        if (Objects.nonNull(houseOwener.getDOB())
+        if (Objects.nonNull(houseOwner.getDob())
                 && !"".equalsIgnoreCase(
-                houseOwener.getDOB())) {
-            depDB.setLastName(
-                    houseOwener.getLastName());
+                houseOwner.getDob())) {
+            depDB.setDob(
+                    houseOwner.getDob());
         }
 
-        if (Objects.nonNull(houseOwener.getGender())
+        if (Objects.nonNull(houseOwner.getGender())
                 && !"".equalsIgnoreCase(
-                houseOwener.getGender())) {
+                houseOwner.getGender())) {
             depDB.setGender(
-                    houseOwener.getGender());
+                    houseOwner.getGender());
         }
 
-        if (Objects.nonNull(houseOwener.getWeight())
+        if (Objects.nonNull(houseOwner.getWeight())
                 && !"".equalsIgnoreCase(
-                houseOwener.getWeight())) {
+                houseOwner.getWeight())) {
             depDB.setWeight(
-                    houseOwener.getWeight());
+                    houseOwner.getWeight());
         }
 
-        if (Objects.nonNull(houseOwener.getHeight())
+        if (Objects.nonNull(houseOwner.getHeight())
                 && !"".equalsIgnoreCase(
-                houseOwener.getHeight())) {
+                houseOwner.getHeight())) {
             depDB.setHeight(
-                    houseOwener.getHeight());
+                    houseOwner.getHeight());
         }
 
-        if (Objects.nonNull(houseOwener.getIlnesses())
+        if (Objects.nonNull(houseOwner.getIllnesses())
                 && !"".equalsIgnoreCase(
-                houseOwener.getIlnesses())) {
-            depDB.setIlnesses(
-                    houseOwener.getIlnesses());
+                houseOwner.getIllnesses())) {
+            depDB.setIllnesses(
+                    houseOwner.getIllnesses());
         }
 
-        if (Objects.nonNull(houseOwener.getCurrentMedicine())
+        if (Objects.nonNull(houseOwner.getCurrentMedicine())
                 && !"".equalsIgnoreCase(
-                houseOwener.getCurrentMedicine())) {
+                houseOwner.getCurrentMedicine())) {
             depDB.setCurrentMedicine(
-                    houseOwener.getCurrentMedicine());
+                    houseOwner.getCurrentMedicine());
         }
 
-        if (Objects.nonNull(houseOwener.getAllergies())
+        if (Objects.nonNull(houseOwner.getAllergies())
                 && !"".equalsIgnoreCase(
-                houseOwener.getAllergies())) {
+                houseOwner.getAllergies())) {
             depDB.setAllergies(
-                    houseOwener.getAllergies());
+                    houseOwner.getAllergies());
         }
 
-        if (Objects.nonNull(houseOwener.getDietaryPreferences())
+        if (Objects.nonNull(houseOwner.getDietaryPreferences())
                 && !"".equalsIgnoreCase(
-                houseOwener.getDietaryPreferences())) {
+                houseOwner.getDietaryPreferences())) {
             depDB.setDietaryPreferences(
-                    houseOwener.getDietaryPreferences());
+                    houseOwner.getDietaryPreferences());
         }
 
 
@@ -125,7 +125,7 @@ public class HouseOwnerServiceImpl
 
     // Delete operation
     @Override
-    public void deleteHouseOwenerById(Long employeeId)
+    public void deleteHouseOwnerById(Long employeeId)
     {
         houseOwnerRepository.deleteById(employeeId);
     }

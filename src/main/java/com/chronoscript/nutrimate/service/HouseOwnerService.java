@@ -1,23 +1,23 @@
 package com.chronoscript.nutrimate.service;
 
-import com.chronoscript.nutrimate.entity.HouseOwener;
+import com.chronoscript.nutrimate.entity.HouseOwner;
 import java.util.List;
 import java.util.Optional;
 
 public interface HouseOwnerService {
     //Save operation
-    HouseOwener saveHouseOwner(HouseOwener houseOwener);
+    HouseOwner saveHouseOwner(HouseOwner houseOwener);
 
     // Read operation
-    List<HouseOwener> fetchHouseOwenerList();
+    List<HouseOwner> fetchHouseOwnerList();
 
     // Read by id operation
-    Optional<HouseOwener> fetchHouseOwenerById(Long houseOwenerId);
+    Optional<HouseOwner> fetchHouseOwnerById(Long houseOwenerId);
 
     // Update operation
-    HouseOwener updateHouseOwener(HouseOwener houseOwener,
-                            Long houseOwenerId);
+    HouseOwner updateHouseOwner(HouseOwner houseOwener,
+                                Long houseOwenerId);
 
     // Delete operation
-    void deleteHouseOwenerById(Long houseOwenerId);
+    void deleteHouseOwnerById(Long houseOwenerId);
 }
