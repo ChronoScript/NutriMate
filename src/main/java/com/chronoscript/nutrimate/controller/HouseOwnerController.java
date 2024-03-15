@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.*;
 
 // Annotation
 @RestController
-
+@RequestMapping("houseowner")
 public class HouseOwnerController {
 
     //Annotation
     @Autowired private HouseOwnerService houseOwnerService;
 
     // Save operation
-    @PostMapping("/HouseOwner/Save")
+    @PostMapping("/save")
     public HouseOwner saveHouseOwner(
             @Valid @RequestBody HouseOwner houseOwener)
     {
@@ -27,21 +27,21 @@ public class HouseOwnerController {
     }
 
     // Read operation
-    @GetMapping("/HouseOwner/Get")
+    @GetMapping("/get")
     public List<HouseOwner> fetchHouseOwnerList()
     {
         return houseOwnerService.fetchHouseOwnerList();
     }
 
     // Read by id operation
-    @GetMapping("/HouseOwner/GetById/{id}")
+    @GetMapping("/getById/{id}")
     public Optional<HouseOwner> fetchHouseOwnerById(@PathVariable("id") Long HouseOwenerId)
     {
         return houseOwnerService.fetchHouseOwnerById(HouseOwenerId);
     }
 
     // Update operation
-    @PutMapping("/HouseOwner/{id}")
+    @PutMapping("/update/{id}")
     public HouseOwner
     updateHouseOwner(@RequestBody HouseOwner houseOwener,
                    @PathVariable("id") Long HouseOwnerId)
@@ -51,7 +51,7 @@ public class HouseOwnerController {
     }
 
     // Delete operation
-    @DeleteMapping("/HouseOwner/{id}")
+    @DeleteMapping("/delete/{id}")
     public String deleteHouseOwnerById(@PathVariable("id")
                                      Long HouseOwnerId)
     {

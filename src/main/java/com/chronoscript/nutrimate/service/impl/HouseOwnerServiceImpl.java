@@ -1,4 +1,4 @@
-package com.chronoscript.nutrimate.service;
+package com.chronoscript.nutrimate.service.impl;
 
 import com.chronoscript.nutrimate.entity.HouseOwner;
 import com.chronoscript.nutrimate.repository.HouseOwnerRepository;
@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import com.chronoscript.nutrimate.service.HouseOwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
