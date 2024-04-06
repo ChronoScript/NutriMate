@@ -61,6 +61,12 @@ public  class DietitianServiceImpl implements DietitianService {
             upDB.setLastName(
                     dietitian.getLastName());
         }
+        if (Objects.nonNull(dietitian.getProfile_image())
+                && !"".equalsIgnoreCase(
+                dietitian.getProfile_image())) {
+            upDB.setProfile_image(
+                    dietitian.getProfile_image());
+        }
 
         if (Objects.nonNull(dietitian.getOccupation())
                 && !"".equalsIgnoreCase(
