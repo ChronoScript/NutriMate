@@ -1,11 +1,14 @@
 package com.chronoscript.nutrimate.service.impl;
 
+import com.chronoscript.nutrimate.entity.HouseOwner;
 import com.chronoscript.nutrimate.entity.User;
 import com.chronoscript.nutrimate.repository.UserRepository;
 import com.chronoscript.nutrimate.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 
@@ -27,6 +30,12 @@ public class UserServiceImpl
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         return userRepository.save(user);
+    }
+    @Override
+    public List<User> fetchUserList()
+    {
+        return (List<User>)
+                userRepository.findAll();
     }
 
     public User authenticate(String username, String password) {

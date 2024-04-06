@@ -1,6 +1,7 @@
 package com.chronoscript.nutrimate.controller;
 
 import com.chronoscript.nutrimate.dto.SignUpResponseDTO;
+import com.chronoscript.nutrimate.entity.HouseOwner;
 import com.chronoscript.nutrimate.entity.User;
 import com.chronoscript.nutrimate.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @CrossOrigin
@@ -28,6 +30,12 @@ public class UserController {
 
         return "register_success";
     }
+    @GetMapping("/get")
+    public List<User> fetchUserList()
+    {
+        return userService.fetchUserList();
+    }
+
 
     @PostMapping("/login")
     public ResponseEntity<SignUpResponseDTO> login(@RequestBody User user) {
