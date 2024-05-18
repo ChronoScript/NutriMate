@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.Optional;
 
 // Annotation
+
+@CrossOrigin
+        (origins = "http://localhost:3000/")
 @RestController
 @RequestMapping("dietitian")
 public class DietitianController {

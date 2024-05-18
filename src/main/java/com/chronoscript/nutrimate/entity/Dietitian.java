@@ -23,7 +23,6 @@ public class Dietitian {
     private Long userId;
     private String firstName;
     private String lastName;
-    private String profile_image;
     private String occupation;
     private String contact_no;
     private String bio;

@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 // Annotation
+@CrossOrigin
+        (origins = "http://localhost:3000/")
+
 @RestController
 @RequestMapping("houseowner")
 public class HouseOwnerController {
